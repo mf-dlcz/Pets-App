@@ -1,4 +1,6 @@
 from django.db import models
+from datetime import datetime
+from django.utils.translation import gettext_lazy as _
 
 # Create your models here.
 class Breed(models.Model):
@@ -42,8 +44,8 @@ class Pet(models.Model):
 class VetVisit(models.Model):
     pet = models.ForeignKey(Pet, on_delete=models.CASCADE)
     vet = models.CharField(max_length=100)
-    date = models.DateField(default=datetime.today().strftime('%Y-%m-%d')
+    date = models.DateField(default=datetime.today().strftime('%Y-%m-%d'))
     notes = models.TextField(null=True, blank=True)
 
     def __str__(self):
-    return self.pet.name + "-" + self.vet + "-" + str(self.date) + "-" + self.notes
+        return self.pet.name + "-" + self.vet + "-" + str(self.date) + "-" + self.notes
