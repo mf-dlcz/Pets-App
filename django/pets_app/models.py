@@ -35,7 +35,7 @@ class Pet(models.Model):
     weight = models.DecimalField(max_digits=8, decimal_places=2, null=True)
     height = models.DecimalField(max_digits=8, decimal_places=2, null=True)
     card = models.OneToOneField(VaccinationCard, on_delete=models.CASCADE)
-    breed = models.ForeignKey(Breed, blank=True)
+    breed = models.ManyToManyField(Breed, blank=True)
 
     def __str__(self):
         return self.name + "-" + self.gender + "-" + str(self.birth) + "-" + self.owner
