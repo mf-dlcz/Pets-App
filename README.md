@@ -21,6 +21,13 @@
     python3 manage.py runserver
     ```
 
+## Database
+Run the following command to show data
+    ```
+    sqlite3 -line db.sqlite3 'SELECT * FROM pets_app_pet'
+    ```
+
+
 ## Apps
 
 ### pets_app
