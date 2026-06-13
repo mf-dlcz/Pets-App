@@ -1,0 +1,20 @@
+{% extends "pets_app/base.html" %}
+{% block content %}
+<div class="pet" style="background-color: lightblue;">
+
+    <h2>{{ pet.name }} - WORK IN PROGRESS</h2>
+
+    <div class="pet">
+        Gender: {{ pet.get_gender_display }}<br/>
+        Birth: {{ pet.birth }}<br/>
+        Owner: {{ pet.owner }}<br/>
+        <br/>
+        Weight: {{ pet.weight }} lb<br/>
+        Height: {{ pet.height }} in<br/>
+        <br/>
+        Vaccines: rabies {{ pet.card.rabies }} / 
+            hepatitis {{ pet.card.hepatitis }}<br/>
+        <br/>
+    </div>
+</div>
+{% endblock content %}
