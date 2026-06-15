@@ -1,0 +1,30 @@
+{% extends "pets_app/base.html" %}
+{% block content %}
+
+<div class="pets" style="background-color: lightblue;">
+
+    <h3>List of pets - WORK IN PROGRESS</h3>
+    <table>
+        <tr>
+            <td>Name</td>
+            <td>Gender</td>
+            <td>Birth</td>
+            <td>Weight</td>
+            <td>Owner</td>
+        </tr>
+        {% for p in pets %}
+        <tr style="background-color: {% cycle 'lightgrey' 'lightgreen' %};">
+            <td>{{ p.name }}</td>
+            <td>{{ p.get_gender_display }}</td>
+            <td>{{ p.birth }}</td>
+            <td>{{ p.weight }}</td>
+            <td>{{ p.owner }}</td>
+        </tr>
+        {% empty %}
+        <tr><td>No pet yet</td></tr>
+        {% endfor %}
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock content %}

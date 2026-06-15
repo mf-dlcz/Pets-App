@@ -14,6 +14,13 @@
   pk: 1
   fields: 
     name: Golden Retriever
+    gender: F
+    birth: 2020-05-28
+    owner: Jaimey James
+    weight: 20
+    height: 10
+    card: 2
+    breed: [1, 2]
 
 - model: pets_app.Breed  
   pk: 2
@@ -31,4 +38,3 @@
     pet: 1
     vet: Jane Doe
     date: 2022-04-30
-111111
