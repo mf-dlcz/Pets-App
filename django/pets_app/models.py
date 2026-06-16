@@ -36,6 +36,7 @@ class Pet(models.Model):
     height = models.DecimalField(max_digits=8, decimal_places=2, null=True)
     card = models.OneToOneField(VaccinationCard, on_delete=models.CASCADE)
     breed = models.ManyToManyField(Breed, blank=True)
+    picture = models.ImageField(max_length=255, null=True)
 
     def __str__(self):
         return self.name + "-" + self.gender + "-" + str(self.birth) + "-" + self.owner
@@ -46,6 +47,10 @@ class VetVisit(models.Model):
     vet = models.CharField(max_length=100)
     date = models.DateField(default=datetime.today().strftime('%Y-%m-%d'))
     notes = models.TextField(null=True, blank=True)
+
+    @property
+    def is_today(self):
+        return self.date == datetime.today().date()
 
     def __str__(self):
         return self.pet.name + "-" + self.vet + "-" + str(self.date) + "-" + self.notes
