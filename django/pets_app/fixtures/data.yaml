@@ -1,40 +1,29 @@
-- model: pets_app.Pet
-  pk: 1
+- model: pets_app.VaccinationCard
+  pk: 3
   fields:
-    name: Buddy
-    gender: M
-    birth: 2022-03-24
-    owner: Mateo Jackson
-    weight: 15
-    height: 12
-    card: 1
-    breed: [1, 2]
+    rabies: 2022-06-01
 
 - model: pets_app.Breed
-  pk: 1
-  fields: 
-    name: Golden Retriever
+  pk: 4
+  fields:
+    name: Cavalier King Charles Spaniel Cavalier King Charles Spaniel
+
+- model: pets_app.Pet
+  pk: 4
+  fields:
+    name: Max
     gender: F
-    birth: 2020-05-28
-    owner: Jaimey James
-    weight: 20
-    height: 10
-    card: 2
-    breed: [1, 2]
+    birth: 2006-03-24
+    owner: Ashley
+    weight: 23
+    height: 9
+    card: 3
+    breed: [4]
 
-- model: pets_app.Breed  
-  pk: 2
-  fields:
-    name: Labrador
-
-- model: pets_app.VaccinationCard
-  pk: 1
-  fields:
-    rabies: 2022-06-01 
-    
 - model: pets_app.VetVisit
   pk: 1
   fields:
-    pet: 1
+    pet: 4
     vet: Jane Doe
-    date: 2022-04-30
+    date: 2023-04-30
+    notes: healthy puppy
