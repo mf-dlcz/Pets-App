@@ -42,11 +42,8 @@ body {
 h2 {
     background-color: #0D1A2B;
     color: white;
-    padding-left: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-left: 5px;
-    margin-right: 5px;
+    padding: 10px 0 10px 10px;
+    margin: 0 auto;
     font-family: Copperplate;
 }
 
@@ -117,13 +114,13 @@ h2 {
 .btn-info {
     background-color: #0D1A2B;
     color: #FFF;
-    padding: 10px 20px;
+    padding: 12px 20px;
     border-radius: 5px;
+    text-decoration: none;
 }
 
 .btn-info:hover {
     color: #f5f5f5;
-    text-decoration: underline;
     font-size: 16px;
-    font-weight: bold;
+    font-style: italic;
 }

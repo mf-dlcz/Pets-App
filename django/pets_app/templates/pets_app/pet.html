@@ -7,21 +7,21 @@
 
     <div class="pet">
         <img src="{{ pet.picture.url }}" width="200" /><br>
-        Gender: {{ pet.get_gender_display }}<br/>
-        Birth: {{ pet.birth }}<br/>
-        Breed: {% for b in pet.breed.all %}
+        <b>Gender:</b> {{ pet.get_gender_display }}<br/>
+        <b>Birth:</b> {{ pet.birth }}<br/>
+        <b>Breed:</b> {% for b in pet.breed.all %}
             {% if forloop.last %}
                 {{ b.name|lower }}
             {% else %}
                 {{ b.name|lower }},
             {% endif %}
         {% endfor %}<br/>
-        Owner: {{ pet.owner }}<br/>
+        <b>Owner:</b> {{ pet.owner }}<br/>
         <br/>
-        Weight: {{ pet.weight }} lb<br/>
-        Height: {{ pet.height }} in<br/>
+        <b>Weight:</b> {{ pet.weight }} lb<br/>
+        <b>Height:</b> {{ pet.height }} in<br/>
         <br/>
-        Vaccines:
+        <b>Vaccines:</b>
         <ul>
             <li>Rabies: {{ pet.card.rabies }} </li> 
             <li>Hepatitis: {{ pet.card.hepatitis|default_if_none:"Never"}}</li>
@@ -29,7 +29,7 @@
             <li>Distemper: {{ pet.card.distemper|default_if_none:"Never" }}</li>
         </ul>
         <br/>
-        Vet visits: 
+        <b>Vet Visits:</b>
         <ul>
             {% for vv in pet.vetvisit_set.all %}
                 <li>{{ vv.date|date:"Y-M-d" }}: Vet {{ vv.vet|title }}
@@ -42,7 +42,7 @@
         <br/>
         <a class="btn btn-info pull-right" 
             href="{% url 'visit' pet.id %}">
-            New visit today with rabies vaccine
+            New visit: Rabies vaccine
         </a><br/><br/>
     </div>
 </div>

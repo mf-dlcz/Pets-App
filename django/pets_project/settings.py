@@ -15,6 +15,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
+# This setting is required for CSRF protection when using CloudFront as a reverse proxy. 
+# It allows the application to trust requests coming from CloudFront domains.
+CSRF_TRUSTED_ORIGINS = ["https://*.cloudfront.net"]
+
 # Application definition
 
 INSTALLED_APPS = [

@@ -6,7 +6,7 @@ from django.utils.translation import gettext_lazy as _
 class Breed(models.Model):
     name = models.CharField(max_length=100)
     weight = models.DecimalField(max_digits=8, decimal_places=2, null=True)
-    height=models.DecimalField(max_digits=8, decimal_places=2, null=True)
+    height = models.DecimalField(max_digits=8, decimal_places=2, null=True)
 
     def __str__(self):
         return self.name + " - " + str(self.weight) + " - " + str(self.height)
@@ -19,7 +19,7 @@ class VaccinationCard(models.Model):
     distemper = models.DateField(null=True, blank = True)
 
     def __str__(self):
-        return str(self.pet) + " - " + str(self.rabies)
+        return str(self.pet) + " - " + str(self.rabies) + " - " + str(self.hepatitis)
     
 
 class Gender(models.TextChoices):
@@ -39,7 +39,7 @@ class Pet(models.Model):
     picture = models.ImageField(max_length=255, null=True)
 
     def __str__(self):
-        return self.name + " - " + self.gender + " - " + str(self.birth.year)
+        return self.name
     
 
 class VetVisit(models.Model):
