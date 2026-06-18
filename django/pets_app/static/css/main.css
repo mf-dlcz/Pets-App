@@ -3,16 +3,16 @@ body {
 }
 
 .banner {
-    background-color: #250902;
+    background-color: #0D1A2B;
     color: #FFFFFF;
     font-size: 250%;
 }
 
 .banner img {
     height: 150px;
-    background-color: #FFFFFF;
+    background-color: #B6DEF6;
     padding: 0 auto;
-    margin: 10 auto;
+    margin: 0 15px 0 0;
 }
 
 .nav-menu {
@@ -24,7 +24,7 @@ body {
     float: left;
     display: block;
     color: white;
-    background-color: #640D14;
+    background-color: #0D1A2B;
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -34,13 +34,13 @@ body {
 }
 
 .nav-menu a:hover {
-    background-color: #800E13;
+    background-color: #B6DEF6;
     width: 100%;
 
 }
 
 h2 {
-    background-color: #800E13;
+    background-color: #0D1A2B;
     color: white;
     padding-left: 10px;
     padding-top: 10px;
@@ -71,7 +71,8 @@ h2 {
 }
 
 .pets td {
-    background-color: #AD2831;
+    background-color: #B6DEF6;
+    color: #0D1A2B;
     padding: 10px;
 }
 
@@ -107,19 +108,22 @@ h2 {
     position: fixed;
     width: 100%;
     bottom: 0px;
-    background-color: #250902;
+    background-color: #0D1A2B;
     color: #FFFFFF;
     font-size: 12px;
     text-align: center;
 }
 
 .btn-info {
-    color: #F6E9EA;
-    text-decoration: underline;
+    background-color: #0D1A2B;
+    color: #FFF;
+    padding: 10px 20px;
+    border-radius: 5px;
 }
 
 .btn-info:hover {
-    color: #FFFFFF;
+    color: #f5f5f5;
     text-decoration: underline;
-    font-size: 18px;
+    font-size: 16px;
+    font-weight: bold;
 }

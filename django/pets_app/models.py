@@ -9,7 +9,7 @@ class Breed(models.Model):
     height=models.DecimalField(max_digits=8, decimal_places=2, null=True)
 
     def __str__(self):
-        return self.name + "-" + str(self.weight) + "-" + str(self.height)
+        return self.name + " - " + str(self.weight) + " - " + str(self.height)
     
 
 class VaccinationCard(models.Model):
@@ -19,7 +19,7 @@ class VaccinationCard(models.Model):
     distemper = models.DateField(null=True, blank = True)
 
     def __str__(self):
-        return str(self.id) + "-" + str(self.rabies)
+        return str(self.pet) + " - " + str(self.rabies)
     
 
 class Gender(models.TextChoices):
@@ -39,13 +39,13 @@ class Pet(models.Model):
     picture = models.ImageField(max_length=255, null=True)
 
     def __str__(self):
-        return self.name + "-" + self.gender + "-" + str(self.birth) + "-" + self.owner
+        return self.name + " - " + self.gender + " - " + str(self.birth.year)
     
 
 class VetVisit(models.Model):
     pet = models.ForeignKey(Pet, on_delete=models.CASCADE)
     vet = models.CharField(max_length=100)
-    date = models.DateField(default=datetime.today().strftime('%Y-%m-%d'))
+    date = models.DateField(default=datetime.today() .strftime('%Y-%m-%d'))
     notes = models.TextField(null=True, blank=True)
 
     @property
@@ -53,4 +53,4 @@ class VetVisit(models.Model):
         return self.date == datetime.today().date()
 
     def __str__(self):
-        return self.pet.name + "-" + self.vet + "-" + str(self.date) + "-" + self.notes
+        return self.pet.name + " - " + self.vet + " - " + str(self.date) + " - " + (self.notes or "")
